@@ -1,6 +1,6 @@
 // src/hooks/useCustomNavigation.js
 import { useNavigate } from 'react-router-dom';
-import { ROUTES } from './routePath';
+import { ROUTES } from '../constants/routing/routePath';
 
 const useCustomNavigation = () => {
   const navigate = useNavigate();

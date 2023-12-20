@@ -2,9 +2,9 @@ import "./Login.css";
 import { BsDiscord } from "react-icons/bs";
 import { FaTwitter } from "react-icons/fa";
 import { Button, SocialLink } from "../../components";
-import useCustomNavigation from "../../routing/Navigation";
 import { motion } from "framer-motion";
-import { ROUTES } from "../../routing/routePath";
+import { ROUTES } from "../../constants/routing/routePath";
+import useCustomNavigation from "../../hooks/useCustomNavigation";
 
 const Login = () => {
   const { goToRooms } = useCustomNavigation();

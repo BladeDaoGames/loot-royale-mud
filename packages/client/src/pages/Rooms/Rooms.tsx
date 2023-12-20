@@ -11,7 +11,7 @@ import {
   Search,
   TabInterface,
 } from "../../components";
-import useCustomNavigation from "../../routing/Navigation";
+import useCustomNavigation from "../../hooks/useCustomNavigation";
 
 const Rooms = () => {
   const [isModalOpen, setModalOpen] = useState(false);
