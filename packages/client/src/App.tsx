@@ -1,12 +1,14 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import {Game} from "./phaser";
+import { Login } from './pages';
 
 export const App = () => {
 
   return (
     <Router>
       <Routes>
-        {/* <Route path="/" element={<Login />} />
+        <Route path="/" element={<Login />} />
+        {/* 
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/waiting" element={<WaitingRoom />} />
         <Route path="/in-game" element={<InGame />} />
