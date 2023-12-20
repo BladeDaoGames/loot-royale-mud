@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useAccount, useConnect, useDisconnect } from 'wagmi';
-import { InjectedConnector } from 'wagmi/connectors/injected';
+import useWalletConnect from '../../hooks/useWalletConnect';
+import useAddressFormatter from '../../hooks/useAddressFormatter';
 
 interface NavbarProps {
   onBackClick: () => void;
@@ -9,28 +9,8 @@ interface NavbarProps {
 
 
 const Navbar: React.FC<NavbarProps> = ({ onBackClick }) => {
-  const { connect } = useConnect();
-  const { disconnect } = useDisconnect();
-  const { address, isConnected } = useAccount()
-
-  const handleConnect = async () => {
-    try {
-      await connect({ connector: new InjectedConnector() });
-    } catch (error) {
-      console.error('Error connecting to wallet:', error);
-    }
-  };
-
-  const handleDisconnect = () => {
-    disconnect();
-  };
-
-  const formatAddress = (address: `0x${string}` | undefined) => {
-    if(address && address.length >= 8){
-      return `${address?.substring(0,4)}...${address?.substring(address.length - 4)}`
-    }
-    return address || '';
-  }
+  const { handleConnect, handleDisconnect, address, isConnected } = useWalletConnect();
+  const { formatAddress } = useAddressFormatter();
   const ButtonHoverAnimation = {
     scale: 1.05,
     transition: {
