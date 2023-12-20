@@ -1,29 +1,19 @@
-import { useComponentValue } from "@latticexyz/react";
-import { useMUD } from "./MUDContext";
-import { singletonEntity } from "@latticexyz/store-sync/recs";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {Game} from "./phaser";
 
 export const App = () => {
-  const {
-    components: { Counter },
-    systemCalls: { increment },
-  } = useMUD();
-
-  const counter = useComponentValue(Counter, singletonEntity);
 
   return (
-    <>
-      <div>
-        Counter: <span>{counter?.value ?? "??"}</span>
-      </div>
-      <button
-        type="button"
-        onClick={async (event) => {
-          event.preventDefault();
-          console.log("new counter value:", await increment());
-        }}
-      >
-        Increment
-      </button>
-    </>
+    <Router>
+      <Routes>
+        {/* <Route path="/" element={<Login />} />
+        <Route path="/rooms" element={<Rooms />} />
+        <Route path="/waiting" element={<WaitingRoom />} />
+        <Route path="/in-game" element={<InGame />} />
+        <Route path="/reward" element={<Reward />} /> */}
+        <Route path="/test-game" element={<Game />} />
+        {/* Add a default redirect or a default route if necessary */}
+      </Routes>
+    </Router>
   );
 };
