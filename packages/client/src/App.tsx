@@ -1,20 +1,22 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import {Game} from "./phaser";
-import { Login, Rooms, WaitingRoom, InGame, Reward } from './pages';
+import { useMUD } from "./MUDContext";
+import AppRoutes from "./routing/Route";
+import { WagmiConfig, createConfig, mainnet } from "wagmi";
+import { createPublicClient, http } from "viem";
+
+const styleUnset = { all: "unset" } as const;
 
 export const App = () => {
 
+  const config = createConfig({
+    autoConnect: true,
+    publicClient: createPublicClient({
+      chain: mainnet,
+      transport: http(),
+    }),
+  });
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/rooms" element={<Rooms />} />
-        <Route path="/waiting" element={<WaitingRoom />} />
-        <Route path="/in-game" element={<InGame />} />
-        <Route path="/reward" element={<Reward />} />
-        <Route path="/test-game" element={<Game />} />
-        {/* Add a default redirect or a default route if necessary */}
-      </Routes>
-    </Router>
+    <WagmiConfig config={config}>
+      <AppRoutes />
+    </WagmiConfig>
   );
 };

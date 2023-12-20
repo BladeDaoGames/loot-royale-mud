@@ -21,6 +21,7 @@
     "@latticexyz/utils": "2.0.0-next.14",
     "@latticexyz/world": "2.0.0-next.14",
     "contracts": "workspace:*",
+    "framer-motion": "^10.16.16",
     "grid-engine": "^2.43.2",
     "phaser": "^3.70.0",
     "react": "^18.2.0",
@@ -28,7 +29,8 @@
     "react-icons": "^4.12.0",
     "react-router-dom": "^6.21.0",
     "rxjs": "7.5.5",
-    "viem": "1.14.0"
+    "viem": "1.14.0",
+    "wagmi": "^1.4.12"
   },
   "devDependencies": {
     "@types/react": "18.2.22",

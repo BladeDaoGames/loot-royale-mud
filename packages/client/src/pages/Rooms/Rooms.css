@@ -9,8 +9,10 @@ div {
 
 .search-input {
   width: 100%;
-  padding-right: 40px; /* Space for the search icon */
-  padding-left: 15px; /* Space from the left */
+  padding-right: 40px;
+  /* Space for the search icon */
+  padding-left: 15px;
+  /* Space from the left */
 }
 
 .search-icon {
@@ -20,7 +22,8 @@ div {
   transform: translateY(-50%);
   font-size: 20px;
   color: #888;
-  pointer-events: none; /* This makes sure the icon doesn't interfere with the input functionality */
+  pointer-events: none;
+  /* This makes sure the icon doesn't interfere with the input functionality */
 }
 
 /* Make the scrollbar width consistent across browsers */
@@ -30,20 +33,42 @@ div {
 
 /* Scrollbar track */
 ::-webkit-scrollbar-track {
-  background: transparent; /* Optional: Set to your desired color or leave transparent */
+  background: transparent;
+  /* Optional: Set to your desired color or leave transparent */
 }
 
 /* Scrollbar thumb (handle) */
 ::-webkit-scrollbar-thumb {
-  background-color: #f9f9f9; /* Beige color */
-  border-radius: 6px; /* Make it cylindrical */
+  background-color: #f9f9f9;
+  /* Beige color */
+  border-radius: 6px;
+  /* Make it cylindrical */
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #a28a6a; /* Darker beige color on hover */
+  background-color: #a28a6a;
+  /* Darker beige color on hover */
 }
 
-p{
-  font-family: 'Noto Sans', sans-serif;
+p {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.modal-slide-down {
+  animation-name: slide-down;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
