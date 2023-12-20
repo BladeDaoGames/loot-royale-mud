@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import { ROUTES } from "./routePath";
+import { ROUTES } from "../constants/routing/routePath";
 import { InGame, Login, Reward, Rooms, WaitingRoom } from "../pages";
 import { Game } from "../phaser";
 
