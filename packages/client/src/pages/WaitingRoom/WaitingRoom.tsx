@@ -1,10 +1,8 @@
 import { useState } from "react";
 import "./WaitingRoom.css";
-import { BiUserPlus } from "react-icons/bi";
-import { ImCross } from "react-icons/im";
 import { FaEthereum } from "react-icons/fa";
 import { Button, MapPlayerSelection, MapSelection, Navbar, TabInterface } from "../../components";
-import useCustomNavigation from "../../routing/Navigation";
+import useCustomNavigation from "../../hooks/useCustomNavigation";
 
 const WaitingRoom = () => {
   const { goToGame, goToRooms } = useCustomNavigation();

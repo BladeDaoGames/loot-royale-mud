@@ -1,5 +1,5 @@
-import useCustomNavigation from "../../routing/Navigation";
 import { InGameChat, InGameInfo, InGameLoading, InGameRanking } from "../../components";
+import useCustomNavigation from "../../hooks/useCustomNavigation";
 
 const InGame = () => {
   const {  goToReward } = useCustomNavigation();

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "../../components";
 import RewardTable from "../../components/reward/rewardTable";
-import useCustomNavigation from "../../routing/Navigation";
+import useCustomNavigation from "../../hooks/useCustomNavigation";
 
 const Reward = () => {
   const { goToRooms } = useCustomNavigation();

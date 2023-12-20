@@ -1,5 +1,4 @@
 import React from "react";
-import { AiOutlineEnter } from "react-icons/ai";
 
 const RewardTable = () => {
   return (
