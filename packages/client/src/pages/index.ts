@@ -1,12 +1,12 @@
-import Login from './Login/Login';
-import Rooms from './Rooms/Rooms';
-import WaitingRoom from './WaitingRoom/WaitingRoom';
-import InGame from './InGame/InGame';
-import Reward from './Reward/Reward';
+import Rooms from './rooms/Rooms'
+import Login from './login/Login'
+import WaitingRoom from './waitingRoom/WaitingRoom'
+import InGame from './inGame/InGame'
+import Reward from './reward/Reward'
 
-export {
-    Login,
+export{
     Rooms,
+    Login,
     WaitingRoom,
     InGame,
     Reward
