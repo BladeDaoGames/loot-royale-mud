@@ -11,6 +11,7 @@ import InGameLoading from "./inGame/inGameLoading";
 import InGameInfo from "./inGame/inGameInfo";
 import InGameRanking from "./inGame/inGameRanking";
 import InGameChat from "./inGame/inGameChat";
+import RoomCard from "./rooms/RoomCard";
 
 export {
   Button,
@@ -26,4 +27,5 @@ export {
   InGameInfo,
   InGameRanking,
   InGameChat,
+  RoomCard
 };
