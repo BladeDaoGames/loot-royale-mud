@@ -27,6 +27,36 @@ const Rooms = () => {
     // Logic to handle search action, e.g., filtering rooms
   };
 
+  //temporary placeholder, remove rooms static data in the future
+  const rooms = [
+    {
+      ethereumAmount: 520,
+      userCount: 3,
+      maxUserCount: 6,
+      roomNumber: "No. 001",
+      roomName: "Ninja Village (10x10)",
+      roomAddress: "0x240..D6a2",
+      status: "Waiting"
+    },
+    {
+      ethereumAmount: 430,
+      userCount: 2,
+      maxUserCount: 6,
+      roomNumber: "No. 002",
+      roomName: "Samurai Retreat (8x8)",
+      roomAddress: "0x123..B4c3",
+      status: "Available"
+    },
+    {
+      ethereumAmount: 600,
+      userCount: 5,
+      maxUserCount: 6,
+      roomNumber: "No. 003",
+      roomName: "Mage Tower (12x12)",
+      roomAddress: "0x456..F9a0",
+      status: "Full"
+    }
+  ];
   return (
     <>
       {" "}
@@ -64,23 +94,11 @@ const Rooms = () => {
                     <div key={row} className="flex justify-between mb-4">
                       {/* Left small card */}
                       <RoomCard
-                        ethereumAmount={520}
-                        userCount={3}
-                        maxUserCount={6}
-                        roomNumber="No. 001"
-                        roomName="Ninja Village (10x10)"
-                        roomAddress="0x240..D6a2"
-                        status="Waiting"
+                        {...rooms[0]}
                       />
                       {/* Right small card */}
                       <RoomCard
-                        ethereumAmount={520}
-                        userCount={3}
-                        maxUserCount={6}
-                        roomNumber="No. 001"
-                        roomName="Ninja Village (10x10)"
-                        roomAddress="0x240..D6a2"
-                        status="Waiting"
+                        {...rooms[0]}
                       />
                     </div>
                   )
