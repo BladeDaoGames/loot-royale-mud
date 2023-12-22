@@ -1,15 +1,15 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import useWalletConnect from '../../hooks/useWalletConnect';
-import useAddressFormatter from '../../hooks/useAddressFormatter';
+import React from "react";
+import { motion } from "framer-motion";
+import useWalletConnect from "../../hooks/useWalletConnect";
+import useAddressFormatter from "../../hooks/useAddressFormatter";
 
 interface NavbarProps {
   onBackClick: () => void;
 }
 
-
 const Navbar: React.FC<NavbarProps> = ({ onBackClick }) => {
-  const { handleConnect, handleDisconnect, address, isConnected } = useWalletConnect();
+  const { handleConnect, handleDisconnect, address, isConnected } =
+    useWalletConnect();
   const { formatAddress } = useAddressFormatter();
   const ButtonHoverAnimation = {
     scale: 1.05,
@@ -34,12 +34,13 @@ const Navbar: React.FC<NavbarProps> = ({ onBackClick }) => {
 
       <div className="text-white pr-10 flex gap-5">
         {isConnected ? (
-          <div>
-            <div className="text-2xl">Connected: {formatAddress(address)}</div>
-            <button className="text-2xl text-end" onClick={handleDisconnect}>Disconnect</button>
-          </div>
+          <button className="text-4xl" onClick={handleDisconnect}>
+            {formatAddress(address)}
+          </button>
         ) : (
-          <button className="text-4xl" onClick={handleConnect}>Connect Wallet</button>
+          <button className="text-4xl" onClick={handleConnect}>
+            Connect Wallet
+          </button>
         )}
         <div>
           <img src="/images/setting.png" alt="Settings" />
@@ -47,6 +48,6 @@ const Navbar: React.FC<NavbarProps> = ({ onBackClick }) => {
       </div>
     </div>
   );
-}
+};
 
 export default Navbar;
