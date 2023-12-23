@@ -20,8 +20,8 @@ const Rooms = () => {
 
   const tabs = [
     { label: "All", disabled: false },
-    { label: "Visitable", disabled: false },
     { label: "Waiting", disabled: false },
+    { label: "On-going", disabled: false },
   ];
   const handleSearch = (searchQuery: string) => {
     // Logic to handle search action, e.g., filtering rooms
