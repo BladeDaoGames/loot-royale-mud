@@ -11,6 +11,8 @@ import InGameLoading from "./inGame/inGameLoading";
 import InGameInfo from "./inGame/inGameInfo";
 import InGameRanking from "./inGame/inGameRanking";
 import InGameChat from "./inGame/inGameChat";
+import WaitingPlayerCard from "./waitingRoom/waitingPlayerCard";
+import WaitingCharacterCard from "./waitingRoom/waitingCharacerSelection";
 import RoomCard from "./rooms/RoomCard";
 
 export {
@@ -27,5 +29,7 @@ export {
   InGameInfo,
   InGameRanking,
   InGameChat,
+  WaitingPlayerCard,
+  WaitingCharacterCard,
   RoomCard
 };
