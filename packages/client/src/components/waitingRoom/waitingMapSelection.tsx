@@ -30,7 +30,7 @@ const MapSelection = ({ onApply }: MapSelectionProps) => {
       </div>
 
       {/* Max player box */}
-      <div className="w-11/12 py-2 border border-beige-100 text-beige-100 text-4xl flex justify-center gap-10 mt-4 rounded-md shadow-right-bottom-medium">
+      {/* <div className="w-11/12 py-2 border border-beige-100 text-beige-100 text-4xl flex justify-center gap-10 mt-4 rounded-md shadow-right-bottom-medium">
         <div>Max Player</div>
         <input
           type="number"
@@ -42,7 +42,7 @@ const MapSelection = ({ onApply }: MapSelectionProps) => {
           onChange={(e) => setMaxPlayers(Number(e.target.value))}
           className="border border-beige-100 text-3xl text-right w-28 bg-white-beige-50"
         />
-      </div>
+      </div> */}
 
       {/* Apply button */}
       <Button
