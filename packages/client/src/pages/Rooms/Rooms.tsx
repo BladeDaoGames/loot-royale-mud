@@ -1,12 +1,11 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import "./Rooms.css";
-import { BiSearchAlt, BiSolidUser } from "react-icons/bi";
-import { FaEthereum } from "react-icons/fa";
 import { BsCoin } from "react-icons/bs";
 import {
   Boxes,
   Button,
   Navbar,
+  RoomCard,
   RoomModal,
   Search,
   TabInterface,
@@ -15,9 +14,8 @@ import useCustomNavigation from "../../hooks/useCustomNavigation";
 
 const Rooms = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-  const toggleModal = () => {
-    setModalOpen(!isModalOpen);
-  };
+  // useCallback is memoization that prevents rerendering
+  const toggleModal = useCallback(() => setModalOpen(!isModalOpen), [isModalOpen]);
   const { goToHome, goToWaiting } = useCustomNavigation();
 
   const tabs = [
@@ -29,13 +27,41 @@ const Rooms = () => {
     // Logic to handle search action, e.g., filtering rooms
   };
 
+  //temporary placeholder, remove rooms static data in the future
+  const rooms = [
+    {
+      ethereumAmount: 520,
+      userCount: 3,
+      maxUserCount: 6,
+      roomNumber: "No. 001",
+      roomName: "Ninja Village (10x10)",
+      roomAddress: "0x240..D6a2",
+      status: "Waiting"
+    },
+    {
+      ethereumAmount: 430,
+      userCount: 2,
+      maxUserCount: 6,
+      roomNumber: "No. 002",
+      roomName: "Samurai Retreat (8x8)",
+      roomAddress: "0x123..B4c3",
+      status: "Available"
+    },
+    {
+      ethereumAmount: 600,
+      userCount: 5,
+      maxUserCount: 6,
+      roomNumber: "No. 003",
+      roomName: "Mage Tower (12x12)",
+      roomAddress: "0x456..F9a0",
+      status: "Full"
+    }
+  ];
   return (
     <>
       {" "}
       {/**Navbar section */}
-      <Navbar
-        onBackClick={goToHome}
-      />
+      <Navbar onBackClick={goToHome} />
       {/**bottom page layout section */}
       <div className="flex h-screen">
         {/**Left Page section */}
@@ -57,7 +83,7 @@ const Rooms = () => {
           <div className="flex flex-col m-4">
             <div className="flex justify-between">
               <Search onSearch={handleSearch} />
-              <TabInterface tabs={tabs} initialActiveTab="All"/>
+              <TabInterface tabs={tabs} initialActiveTab="All" />
             </div>
             <div className="bg-white-beige-50 w-full h-full border border-beige-100 rounded-md -mt-0.5">
               {/* Main scrollable card */}
@@ -67,67 +93,13 @@ const Rooms = () => {
                   (row) => (
                     <div key={row} className="flex justify-between mb-4">
                       {/* Left small card */}
-                      <div className="flex-1 bg-white-beige-100/30 border border-beige-100 mr-2 rounded-md p-4">
-                        <div className="flex justify-between">
-                          <div className="flex flex-col">
-                            <div className="bg-beige-100 w-20 h-10 border gap-2 rounded-lg flex justify-center items-center relative z-10 text-white text-xl">
-                              <div>
-                                <FaEthereum />
-                              </div>
-                              <div className="text-4xl -mb-1.5">520</div>
-                            </div>
-                            <div className="bg-white-beige-50 w-20 h-10 border gap-2 border-beige-100 rounded-lg flex justify-center items-center -mt-2 text-beige-100 text-xl">
-                              <div>
-                                <BiSolidUser />
-                              </div>
-                              <p className="font-bold">3/6</p>
-                            </div>
-                          </div>
-                          <div className="flex flex-col">
-                            <div className="text-3xl font-thinner text-beige-100 border-b border-beige-100 ">
-                              <span className="pr-20">No. 001</span>{" "}
-                              <span>Ninja Village(10x10)</span>
-                            </div>
-                            <div className="flex justify-between text-3xl font-thin text-beige-100 pt-2">
-                              <span>0x240..D6a2</span>
-                              <span className="text-md text-white bg-beige-100 rounded-md px-4 h-8">
-                                Waiting
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <RoomCard
+                        {...rooms[0]}
+                      />
                       {/* Right small card */}
-                      <div className="flex-1 bg-white-beige-100/30 border border-beige-100 mr-2 rounded-md p-4">
-                        <div className="flex justify-between">
-                          <div className="flex flex-col">
-                            <div className="bg-beige-100 w-20 h-10 border gap-2 rounded-lg flex justify-center items-center relative z-10 text-white text-xl">
-                              <div>
-                                <FaEthereum />
-                              </div>
-                              <div className="text-4xl -mb-1.5">520</div>
-                            </div>
-                            <div className="bg-white-beige-50 w-20 h-10 border gap-2 border-beige-100 rounded-lg flex justify-center items-center -mt-2 text-beige-100 text-xl">
-                              <div>
-                                <BiSolidUser />
-                              </div>
-                              <p className="font-bold">3/6</p>
-                            </div>
-                          </div>
-                          <div className="flex flex-col">
-                            <div className="text-3xl font-thinner text-beige-100 border-b border-beige-100 ">
-                              <span className="pr-20">No. 001</span>{" "}
-                              <span>Ninja Village(10x10)</span>
-                            </div>
-                            <div className="flex justify-between text-3xl font-thin text-beige-100 pt-2">
-                              <span>0x240..D6a2</span>
-                              <span className="text-md text-white bg-beige-100 rounded-md px-4 h-8">
-                                Waiting
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <RoomCard
+                        {...rooms[0]}
+                      />
                     </div>
                   )
                 )}
