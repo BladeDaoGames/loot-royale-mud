@@ -13,6 +13,7 @@ import InGameRanking from "./inGame/inGameRanking";
 import InGameChat from "./inGame/inGameChat";
 import WaitingPlayerCard from "./waitingRoom/waitingPlayerCard";
 import WaitingCharacterCard from "./waitingRoom/waitingCharacerSelection";
+import RoomCard from "./rooms/RoomCard";
 
 export {
   Button,
@@ -29,5 +30,6 @@ export {
   InGameRanking,
   InGameChat,
   WaitingPlayerCard,
-  WaitingCharacterCard
+  WaitingCharacterCard,
+  RoomCard
 };
