@@ -40,12 +40,19 @@ const WaitingRoom = () => {
             >
               Exit room
             </Button>
-            <Button onClick={()=>{}} className="flex justify-center gap-4 items-center w-6/12 bg-beige-100 text-white shadow-right-bottom-medium rounded-lg pt-2 mr-6 pb-1">
+            <Button
+              className="flex justify-center items-center w-52 bg-beige-100 text-white shadow-right-bottom-medium rounded-lg pt-2 ml-6"
+              onClick={goToRooms}
+              disabled={true}
+            >
+              Owner start
+            </Button>
+            <Button onClick={()=>{}} className="flex justify-center gap-4 items-center w-4/12 bg-beige-100 text-white shadow-right-bottom-medium rounded-lg pt-2 mr-6 pb-1">
               {" "}
               <div className="text-2xl text-beige-100 bg-white rounded-full w-10 h-10 flex justify-center items-center">
                 <FaEthereum />
               </div>
-              <div className="-mb-1"> Stake 999 Eth to Start Game </div>
+              <div className="-mb-1"> Stake Eth to Start </div>
             </Button>
           </div>
         </div>
