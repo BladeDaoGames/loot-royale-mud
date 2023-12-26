@@ -26,20 +26,18 @@ const MapPlayerSelection = () => {
         <WaitingCharacterCard
           imageName="klee"
           title="Mob User 1"
-          subtitle="Staked"
           isOwner={true}  // Set based on your logic
+          isStaked={true}
         />
         {/**Venti */}
         <WaitingCharacterCard
           imageName="venti"
           title="Mob User 1"
-          subtitle="Staked"
         />
         {/**Eula */}
         <WaitingCharacterCard
           imageName="eula"
           title="Mob User 1"
-          subtitle="Staked"
         />
       </div>
       {/**Row 2 for player cards */}
